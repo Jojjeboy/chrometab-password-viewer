@@ -12,6 +12,12 @@
     "browser_action": {
         "default_title": "Inject!"
     },
+    "icons": {
+        "16": "images/lock16.png",
+        "32": "images/lock32.png",
+        "48": "images/lock48.png",
+        "128": "images/lock128.png"
+    },
     "permissions": [
         "activeTab"
     ]
