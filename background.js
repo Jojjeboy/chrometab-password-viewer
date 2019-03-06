@@ -6,4 +6,16 @@ chrome.browserAction.onClicked.addListener(function(tab) {
     chrome.tabs.executeScript(tab.ib, {
         file: 'inject.js'
     });
+
+    chrome.runtime.onMessage.addListener(
+        function(request, sender, sendResponse) {
+            console.log('---------------');
+            console.log(request.newIconPath);
+            console.log('---------------');
+            // read `newIconPath` from request and read `tab.id` from sender
+            chrome.browserAction.setIcon({
+                path: request.newIconPath,
+                tabId: sender.tab.id
+            });
+        });;
 });
